@@ -11,4 +11,4 @@ class Curso(models.Model):
 
 def __str__(self):
         text = "{0} ({1})"
-        return text.format(self.name, self.creditos)
+        return text.format(self,codigo,self.name, self.creditos)
