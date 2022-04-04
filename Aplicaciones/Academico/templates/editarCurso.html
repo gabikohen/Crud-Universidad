@@ -3,13 +3,13 @@
 {% block body %}
 <div class="row">
     <div class="col-md-4 offset-md-4">
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-8 col-xl-4">
+        
+    
           
               <h2>Editar de Curso</h2>
               <div class="card">
                 <div class="card-body">
-                  <form action= "/editCurso/" method="PUT">{% csrf_token %}
+                  <form action= "/editCurso/" method="POST">{% csrf_token %}
                     
                     <div class="form-group">
                       <input type="text" id="txtCodigo" value="{{curso.codigo}}" name="txtCodigo" class="form-control" placeholder="Código"
@@ -19,7 +19,7 @@
                       <input type="text"  id="txtNombre" name="txtNombre"  value="{{curso.name}}" class="form-control" placeholder="Name"  maxlength="50" required>
                     </div>
                     <div class="form-group">
-                      <input type="text"  id="numCreditos" name="numCreditos" value="{{curso.creditos}}"class="form-control" placeholder="Creditos"  minlength="1"  maxlength="20"   required>
+                      <input type="text"  id="numCreditos"  value="1" name="numCreditos" value="{{curso.creditos}}"class="form-control" placeholder="Creditos"  min="1" max="9"  required>
                     </div>
                     <div class="form-group">
                       <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
@@ -29,5 +29,5 @@
               </div>
           </div>
     </div>
-</div>
+
 {% endblock%}
